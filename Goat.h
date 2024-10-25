@@ -24,6 +24,13 @@ public:
     string get_color() const        { return color; }
 
     // write overloaded < operator for the std::list
+     bool operator<(const Goat& g) const
+    {
+        if (this->name < g.get_name())
+            return true;
+        else
+            return false;
+    }
 };
 
 #endif
