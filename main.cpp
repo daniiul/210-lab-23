@@ -29,24 +29,46 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    int entry;
-    while(entry != 4)
+    int op = main_menu();
+    while(op != 4)
     {
-        cout << "*** GOAT MANAGER 3001 ***" << endl;
-        cout << "[1] Add a goat" << endl;
-        cout << "[2] Delete a goat" << endl;
-        cout << "[3] List Goats" << endl;
-        cout << "[4] Quit" << endl;
-        cout << "Choice -->";
-        cin >> entry;
-        if (entry < 1 || entry > 4)
-        {
-            cout << "Please enter a valid entry" << endl;
-            cout << endl;
-        }
+       if (op == 1)
+       {
+
+       }
+       else if (op == 2)
+       {
+
+       }
+       else if (op == 3)
+       {
+
+       }
     }
+
 
 
     return 0;
 }
 
+int main_menu()
+{
+    list<Goat> trip;
+
+    int entry;
+    cout << "*** GOAT MANAGER 3001 ***" << endl;
+    cout << "[1] Add a goat" << endl;
+    cout << "[2] Delete a goat" << endl;
+    cout << "[3] List Goats" << endl;
+    cout << "[4] Quit" << endl;
+    cout << "Choice -->";
+    cin >> entry;
+    while(entry < 1 || entry > 4)
+    {
+        cout << "Please enter a valid entry";
+        cin >> entry;
+        cout << endl;
+    }
+
+    return entry;
+}
