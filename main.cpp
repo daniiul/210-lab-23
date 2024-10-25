@@ -29,7 +29,22 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-
+    int entry;
+    while(entry != 4)
+    {
+        cout << "*** GOAT MANAGER 3001 ***" << endl;
+        cout << "[1] Add a goat" << endl;
+        cout << "[2] Delete a goat" << endl;
+        cout << "[3] List Goats" << endl;
+        cout << "[4] Quit" << endl;
+        cout << "Choice -->";
+        cin >> entry;
+        if (entry < 1 || entry > 4)
+        {
+            cout << "Please enter a valid entry" << endl;
+            cout << endl;
+        }
+    }
 
 
     return 0;
