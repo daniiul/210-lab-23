@@ -29,12 +29,14 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
+    list<Goat> trip;
+
     int op = main_menu();
     while(op != 4)
     {
        if (op == 1)
        {
-
+           add_goat();
        }
        else if (op == 2)
        {
@@ -53,8 +55,6 @@ int main() {
 
 int main_menu()
 {
-    list<Goat> trip;
-
     int entry;
     cout << "*** GOAT MANAGER 3001 ***" << endl;
     cout << "[1] Add a goat" << endl;
@@ -71,4 +71,13 @@ int main_menu()
     }
 
     return entry;
+}
+
+void add_goat(list<Goat> &trip, string[] names, string[] colors)
+{
+    string n = names[rand() % SZ_NAMES];
+    string c = names[rand() % SZ_COLORS];
+    int a = rand() % MAX_AGE;
+    Goat temp = new Goat(n, a, c);
+    trip.push_back(temp);
 }
