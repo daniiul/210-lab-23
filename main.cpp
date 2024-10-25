@@ -1,3 +1,5 @@
+// COMSC-210 | Midterm 1 | Daniil Malakhov
+// IDE used: Codeblocks
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -44,6 +46,7 @@ int main() {
        }
        else if (op == 3)
        {
+            cout << "Current  list: " << endl;
             display_trip(trip);
        }
        op = main_menu();
@@ -52,6 +55,9 @@ int main() {
     return 0;
 }
 
+// displays the menu
+// arguments: none
+// returns: an int representing choice made by user
 int main_menu()
 {
     int entry;
@@ -69,9 +75,14 @@ int main_menu()
         cout << endl;
     }
 
+    cout << endl;
+
     return entry;
 }
 
+// adds a new goat to the list with a random name age and color
+// arguments: address to list of current trip, array of names, array of colors
+// returns: none
 void add_goat(list<Goat> &trip, string names[], string colors[])
 {
     string n = names[rand() % SZ_NAMES];
@@ -82,32 +93,36 @@ void add_goat(list<Goat> &trip, string names[], string colors[])
     return;
 }
 
+// deletes specified goat from list
+// arguments: address to list of current trip
+// returns: none
 void delete_goat(list<Goat> &trip)
 {
     int entry;
 
-    cout << endl;
     display_trip(trip);
 
     cout << "Select which goat to delete: ";
     cin >> entry;
 
     auto itd = trip.begin();
-    advance(itd, entry);
+    advance(itd, entry - 1);
     trip.erase(itd);
 
     cout << "New List: " << endl;
-    cout << endl;
     display_trip(trip);
 }
 
+// displays current trip
+// arguments: address to trip list
+// returns: none
 void display_trip(list<Goat> trip)
 {
    int i = 1;
-
    for(auto it = trip.begin(); it != trip.end(); it++)
    {
         Goat temp = *it;
-        cout << "[" << i << "] " << temp.get_name() << "( " << temp.get_age() << ", " << temp.get_color() << ")" << endl;
+        cout << "[" << i++ << "] " << temp.get_name() << "( " << temp.get_age() << ", " << temp.get_color() << ")" << endl;
    }
+   cout << endl;
 }
